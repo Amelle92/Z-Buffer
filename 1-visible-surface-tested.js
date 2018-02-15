@@ -1,32 +1,3 @@
-/* Adam Melle
-
-	*I used opengl and a library called gl-matrix that is used for matrix math. I only used
-	gl-matrix for the rotation. Everything else is pure webgl.*
-
-	My program actually runs but the hidden surface removal was not implemented by me. Because of my lack of knowledge 
-	of opengl, I couldn't figure out how to get the array of all x,y,z points that are being drawn. So instead, I will
-	show how I would implement hidden surface removal using the z-buffer method if I had the array of points. The Z-Buffer
-	checkbox option is the zbuffer depth test that webgl provides.
-
-	Z-Buffer Algorithm:
-		To implement the Z-buffer manually, 
-
-		1: First take the array of points being drawn and copy it into another array called Z-buffer, but
-		   don't copy points that have the same X and Y values as a point previously copied.
-
-		2: Set all the z values of each point in the Z-buffer to a very small number, like -9999.
-
-		3: Now, while drawing each point in the original array, first find the matching X and Y value in the Z-buffer.
-		   If the Z-buffer z value is smaller than the original array z value, then draw the point and replace the z
-		   value in the Z-buffer with the original array's z value. If the z value is larger than that in the Z-buffer,
-		   don't draw the point.
-	
-	Arbitrary object:
-		The Z-buffer method I explained would still work for arbitrary objects. To allow the user to make any object they
-		want, I would give them the option to dynamically allocate x,y,z entry fields on the UI. I demonstrated this ability 
-		in one of my previous homework assingments as well.
-*/
-
 var vertexShaderText = 
 [
 'precision mediump float;',
