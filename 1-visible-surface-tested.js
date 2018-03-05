@@ -293,19 +293,18 @@ var Initialize3DView = function () {
      		a+=3;
      	}
      	gl.bindBuffer(gl.ARRAY_BUFFER, ConeVertBufferObject);
-		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ConeVertices), gl.STATIC_DRAW);
-		gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ConeIndexBufferObject);
-		gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(ConeIndices), gl.STATIC_DRAW);
-		gl.vertexAttribPointer(positionAttribLocation,3,gl.FLOAT,gl.FALSE,6*Float32Array.BYTES_PER_ELEMENT,0);
-		gl.vertexAttribPointer(colorAttribLocation,3,gl.FLOAT,gl.FALSE,6*Float32Array.BYTES_PER_ELEMENT,3*Float32Array.BYTES_PER_ELEMENT);
-		gl.enableVertexAttribArray(positionAttribLocation);
-		gl.enableVertexAttribArray(colorAttribLocation);
-		gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ConeVertices), gl.STATIC_DRAW);
-		gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(ConeIndices), gl.STATIC_DRAW);
-		gl.drawElements(gl.TRIANGLES, ConeIndices.length, gl.UNSIGNED_SHORT, 0);
-	}
-	var TestVHButton = document.getElementById('Rotate');
-	TestVHButton.addEventListener('click', StartRotateloop);
-
-	GeneratePrism();
+		  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ConeVertices), gl.STATIC_DRAW);
+		  gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ConeIndexBufferObject);
+		  gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(ConeIndices), gl.STATIC_DRAW);
+		  gl.vertexAttribPointer(positionAttribLocation,3,gl.FLOAT,gl.FALSE,6*Float32Array.BYTES_PER_ELEMENT,0);
+		  gl.vertexAttribPointer(colorAttribLocation,3,gl.FLOAT,gl.FALSE,6*Float32Array.BYTES_PER_ELEMENT,3*Float32Array.BYTES_PER_ELEMENT);
+		  gl.enableVertexAttribArray(positionAttribLocation);
+		  gl.enableVertexAttribArray(colorAttribLocation);
+		  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(ConeVertices), gl.STATIC_DRAW);
+		  gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(ConeIndices), gl.STATIC_DRAW);
+		  gl.drawElements(gl.TRIANGLES, ConeIndices.length, gl.UNSIGNED_SHORT, 0);
+	  }
+	  var TestVHButton = document.getElementById('Rotate');
+	  TestVHButton.addEventListener('click', StartRotateloop);
+    GeneratePrism();
 };
